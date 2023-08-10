@@ -18,11 +18,12 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="/css/home.css">
 </head>
 <body>
 
 <div class="container">
-    <h2>Striped Rows</h2>
+    <h1>Striped Rows</h1>
     <p>The .table-striped class adds zebra-stripes to a table:</p>
     <table class="table table-striped">
         <thead>
@@ -43,7 +44,7 @@
                 <td>${p.price}</td>
                 <td><img src="${p.img}" width="250" height="300"></td>
                 <td>
-                    <a href="/products/edit?id=${p.id}" type="button" class="btn btn-warning">Edit</a>
+                    <a href="/products/${p.id}" type="button" class="btn btn-warning">Edit</a>
                 </td>
                 <td>
                     <button type="button" class="btn btn-danger">Delete</button>

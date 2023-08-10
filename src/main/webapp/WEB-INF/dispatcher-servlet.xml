@@ -19,6 +19,6 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
-    <bean class="com.demospringmvc.service.ProductService" name="productService"></bean>
+    <bean class="com.demospringmvc.service.ProductService" name="productService1"></bean>
 
 </beans>

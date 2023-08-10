@@ -5,32 +5,34 @@ import com.demospringmvc.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 
 @Controller
+@RequestMapping("/products")
 public class Home {
     @Autowired
     ProductService productService;
 
-    @GetMapping("/products")
+    @GetMapping
     public String home(Model model){
         model.addAttribute("products", productService.products);
         return "home";
     }
-
-    @GetMapping("/products/edit")
-    public String showEdit(@RequestParam int id, Model model){
+    @GetMapping("/{id}")
+    public String showEdit2(Model model, @PathVariable int id){
         model.addAttribute("product",productService.findById(id));
         return "edit";
     }
 
-    @PostMapping("/products/edit")
-    public String edit(@RequestParam int id,String name, String img, int price){
-        productService.edit(new Product(id,price,name,img));
+    @PostMapping("/edit")
+    public String edit(@ModelAttribute Product product){
+        productService.edit(product);
         return "redirect:/products";
+    }
+
+    public String home(){
+        return "home";
     }
 }
