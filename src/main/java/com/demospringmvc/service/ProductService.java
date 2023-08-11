@@ -9,9 +9,9 @@ public class ProductService {
 
     public ProductService() {
         products = new ArrayList<>();
-        products.add(new Product(1, 200, "Người yêu Quang", "https://muabanre.net/wp-content/uploads/2023/06/gai-xinh-in4-vsbg-14.jpg"));
-        products.add(new Product(2, 200, "Người yêu Minh", "https://gamek.mediacdn.vn/133514250583805952/2021/12/18/photo-1-1639800841076808022272.jpg"));
-        products.add(new Product(3, 200, "Người yêu Hảo", "https://voz.vn/attachments/91521840_307101980289524_4067317154385494016_n-png.38616/"));
+        products.add(new Product(1, 200, "Người yêu Quang", "https://muabanre.net/wp-content/uploads/2023/06/gai-xinh-in4-vsbg-14.jpg", true));
+        products.add(new Product(2, 200, "Người yêu Minh", "https://gamek.mediacdn.vn/133514250583805952/2021/12/18/photo-1-1639800841076808022272.jpg",false));
+        products.add(new Product(3, 200, "Người yêu Hảo", "https://voz.vn/attachments/91521840_307101980289524_4067317154385494016_n-png.38616/",true));
     }
 
     public Product findById(int id) {
