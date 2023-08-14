@@ -22,6 +22,7 @@
             <th>name</th>
             <th>price</th>
             <th>status</th>
+            <th>Category</th>
             <th>img</th>
             <th>edit</th>
             <th>delete</th>
@@ -30,12 +31,14 @@
         <tbody>
 
         <tr th:each="p : ${products}">
-            <td th:text="${p.id}"></td>
+            <td th:text="${p.getId()}"></td>
             <td th:text="${p.name}"></td>
             <td th:text="${p.price}"></td>
 
             <td th:if="${p.status}"><p style="color: palevioletred">Còn Hàng</p></td>
             <td th:if="${!p.status}"><p style="color: red">Hết Hàng</p></td>
+
+            <td th:text="${p.category.name}"></td>
 
             <td><img th:src="${p.img}" width="250" height="300"></td>
             <td>

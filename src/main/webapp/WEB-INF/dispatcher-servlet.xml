@@ -33,5 +33,13 @@
         <property name="characterEncoding" value="UTF-8"></property>
     </bean>
 
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!-- Kích thước tối đa cho mỗi tệp tin (ở đây là 10MB) -->
+        <property name="maxUploadSize" value="10485760000" />
+    </bean>
+
+    <mvc:resources mapping="/**" location="file:/Users/johntoan98gmail.com/Desktop/demoSpringMvc/src/main/webapp/" />
+
+
     <bean class="com.demospringmvc.service.ProductService" name="productService1"></bean>
 </beans>

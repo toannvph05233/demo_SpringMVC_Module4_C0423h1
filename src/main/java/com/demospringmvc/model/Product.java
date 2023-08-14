@@ -6,13 +6,15 @@ public class Product {
     private String name;
     private String img;
     private boolean status;
+    private Category category;
 
-    public Product(int id, int price, String name, String img, boolean status) {
+    public Product(int id, int price, String name, String img, boolean status, Category category) {
         this.id = id;
         this.price = price;
         this.name = name;
         this.img = img;
         this.status = status;
+        this.category = category;
     }
 
     public Product() {
@@ -56,5 +58,13 @@ public class Product {
 
     public void setStatus(boolean status) {
         this.status = status;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 }
